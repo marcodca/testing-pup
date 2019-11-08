@@ -9,6 +9,7 @@ const Index = () => (
       alt="Clever Beagle"
     />
     <h1>Pup</h1>
+    <h2>Give it a try, is easy to edit!</h2>
     <p>The Ultimate Boilerplate for Products.</p>
     <div>
       <Button href="http://cleverbeagle.com/pup">Read the Docs</Button>

@@ -1,0 +1,7 @@
+subscription commentAdded($documentId: String) {
+  commentAdded(documentId: $documentId){
+    comment
+    createdAt
+  }
+}
+  

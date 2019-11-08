@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { graphql } from 'react-apollo';
+import { withRouter } from 'react-router';
 import CommentComposer from '../CommentComposer';
 import { timeago } from '../../../modules/dates';
+import commentAddedSubscription from '../../subscriptions/Comments.gql';
 
 import { StyledComments, CommentsList, CommentsListHeader, Comment } from './styles';
 
-const Comments = ({ sortBy, onChangeSortBy, documentId, comments }) => (
+const Comments = ({ sortBy, onChangeSortBy, documentId, comments, data }) => (
   <StyledComments>
+    {console.log(data)}
     <CommentComposer documentId={documentId} />
     {comments.length > 0 && (
       <CommentsList>
@@ -45,6 +49,15 @@ Comments.propTypes = {
   comments: PropTypes.array.isRequired,
   sortBy: PropTypes.string.isRequired,
   onChangeSortBy: PropTypes.func.isRequired,
+  data: PropTypes.object.isRequired,
 };
 
-export default Comments;
+export default withRouter(
+  graphql(commentAddedSubscription, {
+    options: ({ match }) => ({
+      variables: {
+        documentId: match.params._id,
+      },
+    }),
+  })(Comments),
+);

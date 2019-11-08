@@ -1,21 +1,22 @@
 {
     "public": {
       "graphQL": {
-        "httpUri": "https://testing-pup.herokuapp.com/graphql"
+        "httpUri": "https://testing-pup.herokuapp.com/graphql",
+        "wsUri": "ws://testing-pup.herokuapp.com/graphql"
       },
-      "productName": "Product Name",
+      "productName": "Testing-pup",
       "copyrightStartYear": "2018",
       "twitterUsername": "product",
-      "facebookUsername": "product",
+      "facebookUsername": "testing-pup",
       "productAddress": "1658 N. Milwaukee Ave., #393, Chicago, IL 60647"
     },
     "private": {
       "MAIL_URL": "",
       "OAuth": {
         "facebook": {
-          "enabled": false,
-          "appId": "",
-          "secret": "",
+          "enabled": true,
+          "appId": "2509730565904982",
+          "secret": "6e422abf72c651e9d9b021b816238bb9",
           "loginStyle": "popup"
         },
         "google": {
